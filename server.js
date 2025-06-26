@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config({ path: './dataconfig.env' });
+const { Pool } = require('pg');
 
 const app = express();
 const port = process.env.PORT || 5000;
