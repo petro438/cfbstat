@@ -77,7 +77,7 @@ const PassingStatsPage = () => {
         params.append('conference', conference);
       }
 
-      const response = await fetch(`http://localhost:5000/api/leaderboards/passing/${season}?${params}`);
+      const response = await fetch(`https://your-api-url.railway.app/api/leaderboards/passing/${season}?${params}`)
       const result = await response.json();
       
       if (result.teams) {
