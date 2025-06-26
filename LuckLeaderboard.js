@@ -29,7 +29,7 @@ const LuckLeaderboard = () => {
         params.append('conference', conferenceFilter);
       }
       
-      const response = await fetch(`http://localhost:5000/api/leaderboards/luck/${selectedSeason}?${params}`);
+      const response = await fetch(`${API_URL}/api/leaderboards/luck/${selectedSeason}?${params}`);
       
       if (!response.ok) {
         throw new Error(`Failed to fetch luck data: ${response.status}`);

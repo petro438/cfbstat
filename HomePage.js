@@ -44,7 +44,8 @@ function HomePage() {
   useEffect(() => {
     const fetchAvailableYears = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/available-years');
+        const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+        fetch(`${API_URL}/api/leaderboards/passing/${season}?${params}`)
         const data = await response.json();
         setAvailableYears(data.years || []);
         
@@ -68,9 +69,9 @@ function HomePage() {
       setError(null);
       
       console.log(`🔄 Loading data for year: ${selectedYear}`);
-      console.log(`🌐 Making request to: http://localhost:5000/api/power-rankings?year=${selectedYear}`);
+      console.log(`🌐 Making request to: ${API_URL}/api/power-rankings?year=${selectedYear}`);
       
-      const response = await fetch(`http://localhost:5000/api/power-rankings?year=${selectedYear}`);
+      const response = await fetch(`${API_URL}/api/power-rankings?year=${selectedYear}`);
       
       if (!response.ok) {
         throw new Error(`API error: ${response.status} - ${response.statusText}`);

@@ -122,7 +122,7 @@ const SOSLeaderboard = () => {
       setLoading(true);
       setError(null);
       
-      const baseUrl = `http://localhost:5000/api/leaderboards/strength-of-schedule-enhanced/${selectedSeason}`;
+      const baseUrl = `${API_URL}/api/leaderboards/strength-of-schedule-enhanced/${selectedSeason}`;
       const url = new URL(baseUrl);
       
       if (conferenceGamesOnly) {
