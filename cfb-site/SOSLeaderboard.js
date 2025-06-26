@@ -8,7 +8,7 @@ const getRankColor = (rank, totalTeams = 134, isHigherBetter = true) => {
     (rank / totalTeams) * 100;
   
   let bgColor;
-  if (percentile >= 96) bgColor = '#58c36c'; // Elite
+    if (percentile >= 96) bgColor = '#58c36c'; // Elite
   else if (percentile >= 91) bgColor = '#6aca7c'; // Excellent
   else if (percentile >= 86) bgColor = '#7cd08b'; // Very Good
   else if (percentile >= 81) bgColor = '#8dd69b'; // Good
